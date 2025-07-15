@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata: 
+  name: vishal-pv
+spec:
+  accessModes:
+  -  ReadWriteMany
+  capacity:
+    storage: 4Gi
+  azureFile:
+    shareName: vishalfileshare
+    secretName: azure-secret 
+  storageClassName: ""
+
+
+

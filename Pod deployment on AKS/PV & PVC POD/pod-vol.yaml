@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-vol
+spec:
+  containers:
+  - image: nginx
+    name: mypod-container 
+    volumeMounts:
+    -  name: my-dir
+       mountPath: /home
+  volumes: 
+  -  emptyDir: 
+       sizeLimit: "500Mi"
+     name: my-dir    
+  
+
+      
+     

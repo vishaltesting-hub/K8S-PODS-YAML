@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pvc
+spec:
+  containers:
+    - name: app-cont
+      image: sonambewafaa/photos-app:v2
+      ports:
+      - containerPort: 8501
+      volumeMounts:
+      - mountPath: /app/photos
+        name: vishal-pv
+  volumes: 
+  - name: vishal-pv
+    persistentVolumeClaim:
+      claimName: pvc-vishal
